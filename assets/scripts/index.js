@@ -4,7 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 
 $(() => {
-  setAPIOrigin(location, config)
+  setAPIOrigin(location, config) // do I add config.apiOrigins.production here?
 })
 
 // use require with a reference to bundle the file and use it in this file

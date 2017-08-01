@@ -1,2 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap'; // bootstrap what?
+
+body {
+  background-color: #4286f4;
+}
+
+.col-box {
+  border: 3px;
+}
