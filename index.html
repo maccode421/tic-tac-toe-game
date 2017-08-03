@@ -12,29 +12,36 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+
       <h1>Tic Tac Toesy</h1>
 
       <div class="container">
           <div class="row">
-            <div class="col-xs-3">T</div>
-            <div class="col-xs-3">I</div>
-            <div class="col-xs-3">C</div>
+            <div class="col-xs-3 box1">T</div>
+            <div class="col-xs-3 box2">I</div>
+            <div class="col-xs-3 box3">C</div>
           </div>
           <div class="row">
-            <div class="col-xs-3">T</div>
-            <div class="col-xs-3">A</div>
-            <div class="col-xs-3">C</div>
+            <div class="col-xs-3 box4">T</div>
+            <div class="col-xs-3 box5">A</div>
+            <div class="col-xs-3 box6">C</div>
           </div>
           <div class="row">
-            <div class="col-xs-3">T</div>
-            <div class="col-xs-3">O</div>
-            <div class="col-xs-3">E</div>
+            <div class="col-xs-3 box7">T</div>
+            <div class="col-xs-3 box8">O</div>
+            <div class="col-xs-3 box9">E</div>
           </div>
-        </div>
-        <h2 class="player1">Player One</h2>
-        <h2 class="player2">Player Two</h2>
+      </div>
+          <!-- create variable for player X and player O -->
+            <h3 class="player">Player One</h3>
+            <h3 class="player">Player Two</h3>
+
+          <div class="win-tie">
+            <div class="col"><h4>win</h4></div>
+            <div class="col"><h4>tie</h4></div>
+          </div>
         <!-- add a button -->
-        <h3>Play Again</h3>
+         <button type="submit" class="btn btn-default"><h4>Play Again</h4></button>
 
     </body>
 </html>

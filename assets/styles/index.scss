@@ -6,24 +6,38 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // body {
 //   background-color: $background;
 // }
-h1 {
-  text-align: center;
-}
-.container {
-  background-color: #4286f4;
-  border: 2px;
-  border-color: #00f;
-  margin: 0 auto;
-}
+
+// background-color: #4286f4;
 
 .row {
-  border-color: #000000;
+  // background-color: #4286f4;
   height: 180px;
+  margin: auto;
+  text-align: center;
 }
 
 .col-xs-3 {
   border: dotted;
-  border-color: #000000;
-  height: 150px;
-  width: 150px;
+  cursor: pointer;
+  float: left;
+  height: 180px;
+  width: 180px;
+}
+
+h3 {
+  display: inline-block;
+  text-align: center;
+}
+
+.player2 {
+  display: inline-block;
+  float: right;
+}
+
+.x {
+  background-color: #ff0000;
+}
+
+.o {
+  background-color: #0000ff;
 }

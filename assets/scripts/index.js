@@ -12,3 +12,59 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example')
+
+$(document).ready(function() {
+
+  const player = 1
+  // click event
+  $('.col-xs-3').on('click', function(event) {
+    const boxSelected = $(this)
+    // how you want the game to be played
+    if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
+      alert('This box already taken! Please select another.')
+      // logic of game
+    } else {
+      if (player === 1) {
+        boxSelected.addClass('x') // if box is selected, add 'x'
+        if (checkForWinner('x')) { // return true or false
+          document.write('You da BOMB! Player' + player + ' ' + 'you WIN!')
+        } else {
+          const player = 2
+        }
+      } else {
+        boxSelected.addClass('o') // if box is selected, add 'o'
+        if (checkForWinner('o')) { // return true or false
+          document.write('You da BOMB! Player' + player + ' ' + 'you WIN!')
+        } else {
+          const player = 1 // when player 2 goes, it goes back to player 1
+        }
+      }
+    }
+  })
+
+  // will fire every time box is checked
+  function checkForWinner(symbol) {
+    // symbol is 'x'
+    // or symbol is 'o'
+    // possible winning combos
+    if ($('.box1').hasClass(symbol) && $('.box2').hasClass(symbol) && $('.box3').hasClass(symbol)) {
+      return true
+    } else if ($('.box4').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box6').hasClass(symbol)) {
+      return true
+    } else if ($('.box7').hasClass(symbol) && $('.box8').hasClass(symbol) && $('.box9').hasClass(symbol)) {
+      return true
+    } else if ($('.box1').hasClass(symbol) && $('.box4').hasClass(symbol) && $('.box7').hasClass(symbol)) {
+      return true
+    } else if ($('.box2').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box8').hasClass(symbol)) {
+      return true
+    } else if ($('.box3').hasClass(symbol) && $('.box6').hasClass(symbol) && $('.box9').hasClass(symbol)) {
+      return true
+    } else if ($('.box1').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box9').hasClass(symbol)) {
+      return true
+    } else if ($('.box3').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box7').hasClass(symbol)) {
+      return true
+    } else {
+      return false
+    }
+  }
+})
