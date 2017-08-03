@@ -15,37 +15,33 @@ require('./example')
 
 $(document).ready(function() {
 
-  const player = 1
+  let player = 1
   // click event
-  $('.col-xs-3').on('click', function(event) {
-    const boxSelected = $(this)
-    // how you want the game to be played
+  $('.col-xs-3').on('click', function(event) { // how you want the game to be played
+    const boxSelected = $(this) // game logic
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
       alert('This box already taken! Please select another.')
-      // logic of game
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           document.write('You da BOMB! Player' + player + ' ' + 'you WIN!')
         } else {
-          const player = 2
+          player = 2 // switch to player 2
         }
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
           document.write('You da BOMB! Player' + player + ' ' + 'you WIN!')
         } else {
-          const player = 1 // when player 2 goes, it goes back to player 1
+          player = 1 // when player 2 goes, it goes back to player 1
         }
       }
     }
   })
 
-  // will fire every time box is checked
-  function checkForWinner(symbol) {
-    // symbol is 'x'
-    // or symbol is 'o'
+  // will fire every time a box is clicked
+  function checkForWinner(symbol) { // symbol is 'x' or symbol is 'o'
     // possible winning combos
     if ($('.box1').hasClass(symbol) && $('.box2').hasClass(symbol) && $('.box3').hasClass(symbol)) {
       return true
