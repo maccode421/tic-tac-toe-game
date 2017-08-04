@@ -13,35 +13,46 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 require('./example')
 
-$(document).ready(function() {
-
+$(document).ready(function () {
   let player = 1
   // click event
-  $('.col-xs-3').on('click', function(event) { // how you want the game to be played
-    const boxSelected = $(this) // game logic
-    if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
-      alert('This box already taken! Please select another.')
+  $('.col-xs-3').on('click', function (event) { // how you want the game to be played
+    const boxSelected = $(this)
+    if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) { // game logic
+      window.alert('Move It! This is my spot.') // NEED TO REPLACE
+    } else if (checkForTie(moveCount)) {
+      window.alert('Hey MAN! we bumping HEADs')
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
-          document.write('You da BOMB! Player' + player + ' ' + 'you WIN!')
+          window.alert('You da BOMB! Player' + player + ' ' + 'you WIN!') // NEED TO REPLACE
         } else {
           player = 2 // switch to player 2
         }
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
-          document.write('You da BOMB! Player' + player + ' ' + 'you WIN!')
+          window.alert('You da BOMB! Player' + player + ' ' + 'you WIN!') // NEED TO REPLACE
         } else {
-          player = 1 // when player 2 goes, it goes back to player 1
+          player = 1 // when player 2 goes, switch back to player 1
         }
       }
     }
   })
 
+  const moveCount = 1
+
+  function checkForTie (moveCount) {
+    if ($(moveCount.boxSelected === 9)) {
+      moveCount++
+      return true
+    } else {
+      return false
+    }
+  }
   // will fire every time a box is clicked
-  function checkForWinner(symbol) { // symbol is 'x' or symbol is 'o'
+  function checkForWinner (symbol) { // symbol is 'x' or 'o'
     // possible winning combos
     if ($('.box1').hasClass(symbol) && $('.box2').hasClass(symbol) && $('.box3').hasClass(symbol)) {
       return true
@@ -64,3 +75,9 @@ $(document).ready(function() {
     }
   }
 })
+
+// $('btn').on('click', function () {
+//  var $btn = $(this).button('loading')
+// business logic...
+//  $btn.button('reset')
+//  })
