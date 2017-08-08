@@ -2,42 +2,52 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap'; // bootstrap what?
 
 // $background: #4286f4
-//
-// body {
-//   background-color: $background;
-// }
 
-// background-color: #4286f4;
+/* body {
+  background-image: url('https://cdn.meme.am/images/400x/11914155.jpg');
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.container {
+  text-align: center;
+} */
 
 .row {
-  // background-color: #4286f4;
   height: 180px;
-  margin: auto;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .col-xs-3 {
   border: dotted;
   cursor: pointer;
-  float: left;
   height: 180px;
   width: 180px;
 }
 
+h1 {
+  border: dotted;
+}
+
 h3 {
-  display: inline-block;
+  display: inline;
   text-align: center;
 }
 
-.player2 {
+.player {
   display: inline-block;
   float: right;
 }
 
+.col {
+  border: dotted;
+}
+
 .x {
-  background-color: #ff0000;
+  background-image: url('https://www.drugs.com/images/pills/mmx/t110497f/docusate-sodium.jpg');
+  background-position: center;
+  background-size: contain;
 }
 
 .o {
-  background-color: #0000ff;
+  background-image: url('http://3.bp.blogspot.com/-fnbsjh8l6T0/Uo7x--cU08I/AAAAAAAAACw/pfsELBnEZ60/s200/stock-photo-19520467-blue-gel-pill+(Small)+(Small).jpg');
 }

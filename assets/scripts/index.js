@@ -19,9 +19,7 @@ $(document).ready(function () {
   $('.col-xs-3').on('click', function (event) { // how you want the game to be played
     const boxSelected = $(this)
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) { // game logic
-      window.alert('Move It! This is my spot.') // NEED TO REPLACE
-    } else if (checkForTie(moveCount)) {
-      window.alert('Hey MAN! we bumping HEADs')
+      document.write('Move It! This is my spot.') // NEED TO REPLACE
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
@@ -41,16 +39,16 @@ $(document).ready(function () {
     }
   })
 
-  const moveCount = 1
+  // const moveCount = 1
 
-  function checkForTie (moveCount) {
-    if ($(moveCount.boxSelected === 9)) {
-      moveCount++
-      return true
-    } else {
-      return false
-    }
-  }
+  // function checkForTie (moveCount) {
+  //  if ($(moveCount.boxSelected === 9)) {
+  //    moveCount++
+  //    return true
+  //  } else {
+  //    return false
+  //  }
+  // }
   // will fire every time a box is clicked
   function checkForWinner (symbol) { // symbol is 'x' or 'o'
     // possible winning combos
