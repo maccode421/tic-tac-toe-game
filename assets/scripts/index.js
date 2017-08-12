@@ -24,19 +24,20 @@ $(document).ready(function () {
   $('.col-xs-3').on('click', function (event) { // how the game to be played
     const boxSelected = $(this)
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) { // game logic
-      document.getElementById('winner').innerHTML = 'PICK ANOTHER BOX'
+      document.getElementById('message').innerHTML = 'PICK ANOTHER BOX'
+      $('#message').hide(1800 bo)
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
-          document.getElementById('winner').innerHTML = 'FLAWLESS VICTORY PLAYER ONE'
+          document.getElementById('winner1').innerHTML = 'Player One FLAWLESS VICTORY!'
         } else {
           player = 2 // switch to player 2
         }
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
-          document.getElementById('winner').innerHTML = 'IMPECCABLE WIN PLAYER TWO'
+          document.getElementById('winner2').innerHTML = 'Player Two IMPECCABLE WIN!'
         } else {
           player = 1 // when player 2 goes, switch back to player 1
         }

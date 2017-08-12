@@ -6,11 +6,11 @@ const app = require('../app')
 // authApi.signUp(authUi.success, authUi.failure, data);
 
 const signUp = function (data) {
-  console.log(data) //
+  console.log(data)
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
-    data: {
+    data: { // Data
       'credentials': {
         'email': data.credentials.email,
         'password': data.credentials.password,
@@ -32,7 +32,7 @@ const signIn = function (data) {
 const signOut = function () {
   return $.ajax({
     method: 'DELETE',
-    url: app.host + '/sign-out/' + app.user.id, //
+    url: app.host + '/sign-out/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
