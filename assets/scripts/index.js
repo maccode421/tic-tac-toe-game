@@ -2,7 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-
+const events = require('./games/event.js')
 $(() => {
   setAPIOrigin(location, config) // do I add config.apiOrigins.production here?
 })
@@ -13,25 +13,30 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 require('./example')
 
+// On document ready 'DOM'
+$(() => { // An arrow function... lexically binds the this value (does not bind its own this...)
+  events.addHandlers()
+})
+
 $(document).ready(function () {
   let player = 1
   // click event
-  $('.col-xs-3').on('click', function (event) { // how you want the game to be played
+  $('.col-xs-3').on('click', function (event) { // how the game to be played
     const boxSelected = $(this)
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) { // game logic
-      document.write('Move It! This is my spot.') // NEED TO REPLACE
+      document.getElementById('winner').innerHTML = 'PICK ANOTHER BOX'
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
-          window.alert('You da BOMB! Player' + player + ' ' + 'you WIN!') // NEED TO REPLACE
+          document.getElementById('winner').innerHTML = 'FLAWLESS VICTORY PLAYER ONE'
         } else {
           player = 2 // switch to player 2
         }
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
-          window.alert('You da BOMB! Player' + player + ' ' + 'you WIN!') // NEED TO REPLACE
+          document.getElementById('winner').innerHTML = 'IMPECCABLE WIN PLAYER TWO'
         } else {
           player = 1 // when player 2 goes, switch back to player 1
         }
@@ -39,16 +44,6 @@ $(document).ready(function () {
     }
   })
 
-  // const moveCount = 1
-
-  // function checkForTie (moveCount) {
-  //  if ($(moveCount.boxSelected === 9)) {
-  //    moveCount++
-  //    return true
-  //  } else {
-  //    return false
-  //  }
-  // }
   // will fire every time a box is clicked
   function checkForWinner (symbol) { // symbol is 'x' or 'o'
     // possible winning combos
@@ -74,8 +69,7 @@ $(document).ready(function () {
   }
 })
 
-// $('btn').on('click', function () {
-//  var $btn = $(this).button('loading')
-// business logic...
-//  $btn.button('reset')
-//  })
+function restart () {
+  window.location.reload()
+}
+document.getElementById('newGame').addEventListener('click', restart)

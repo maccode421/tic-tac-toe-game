@@ -3,51 +3,114 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // $background: #4286f4
 
-/* body {
-  background-image: url('https://cdn.meme.am/images/400x/11914155.jpg');
-  background-position: top right;
-  background-repeat: no-repeat;
+body {
+  background-image: url('https://s3.envato.com/files/214324850/Glow%20Neon%20White%20Lights%20Tunnel.jpg');
+  //  background-color: #000000;
+  background-size: cover;
+  font-size: 16px;
+  // text-align: center;
 }
-.container {
-  text-align: center;
-} */
+
+//.container {
+//  background-position: center;
+//}
 
 .row {
-  height: 180px;
-  margin: 0 auto;
+  height: 150px;
+  margin-left: 350px;
 }
 
 .col-xs-3 {
   border: dotted;
+  border-radius: 12px;
+  color: #ffffff;
   cursor: pointer;
-  height: 180px;
-  width: 180px;
+  height: 150px;
+  margin-top: -149px;
+  width: 150px;
 }
 
 h1 {
   border: dotted;
-}
-
-h3 {
-  display: inline;
+  border-radius: 12px;
+  box-sizing: content-box;
+  color: #ffffff;
+  font-family: fantasy;
+  font-size: 60px;
+  font-weight: bold;
   text-align: center;
+  width: 400px;
 }
 
-.player {
-  display: inline-block;
-  float: right;
+h2 {
+  // border: dotted;
+  // box-sizing: content-box;
+  color: #ffffff;
+  font-family: fantasy;
+  // display: inline;
+  // text-align: center;
 }
 
-.col {
-  border: dotted;
+h4 {
+  font-family: fantasy;
+}
+
+#winner {
+  color: #39ff14;
+  font-family: fantasy;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+// div {
+//  background-position: center;
+// }
+
+// .player1 {
+// color: #39ff14;
+// float: right;
+// }
+
+// .player2 {
+// color: #39ff14;
+// display: inline-block;
+// float: right;
+// text-align: center;
+// }
+
+// .col {
+// border: dotted;
+// color: #ffffff;
+// height: 50px;
+// width: 300px;
+// }
+
+button {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+form {
+  //  background-color: #000000;
+  color: #ffffff;
+  font-family: fantasy;
+  text-align: right;
+}
+
+input {
+  background-color: #000000;
 }
 
 .x {
-  background-image: url('https://www.drugs.com/images/pills/mmx/t110497f/docusate-sodium.jpg');
+  background-image: url('https://image.shutterstock.com/z/stock-photo-glowing-neon-font-big-letter-x-53841778.jpg');
   background-position: center;
   background-size: contain;
+  opacity: .7;
 }
 
 .o {
-  background-image: url('http://3.bp.blogspot.com/-fnbsjh8l6T0/Uo7x--cU08I/AAAAAAAAACw/pfsELBnEZ60/s200/stock-photo-19520467-blue-gel-pill+(Small)+(Small).jpg');
+  background-image: url('https://image.shutterstock.com/z/stock-photo-glowing-neon-font-big-letter-o-53841808.jpg');
+  background-position: center;
+  background-size: contain;
+  opacity: .7;
 }
