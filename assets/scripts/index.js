@@ -25,19 +25,19 @@ $(document).ready(function () {
     const boxSelected = $(this)
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) { // game logic
       document.getElementById('message').innerHTML = 'PICK ANOTHER BOX'
-      $('#message').hide(1800 bo)
+      $('#message').hide(3000)
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
-          document.getElementById('winner1').innerHTML = 'Player One FLAWLESS VICTORY!'
+          document.getElementById('winner').innerHTML = 'Player One FLAWLESS VICTORY!'
         } else {
           player = 2 // switch to player 2
         }
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
-          document.getElementById('winner2').innerHTML = 'Player Two IMPECCABLE WIN!'
+          document.getElementById('winner').innerHTML = 'Player Two IMPECCABLE WIN!'
         } else {
           player = 1 // when player 2 goes, switch back to player 1
         }
