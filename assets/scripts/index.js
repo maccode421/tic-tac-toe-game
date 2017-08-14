@@ -30,20 +30,32 @@ $(document).ready(function () {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
-          document.getElementById('winner').innerHTML = 'Player One FLAWLESS VICTORY!'
+          document.getElementById('winner1').innerHTML = 'FLAWLESS VICTORY! Player One'
+          $('#winner1').hide(3000)
+          $('#winner1').show(3000)
         } else {
           player = 2 // switch to player 2
         }
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
-          document.getElementById('winner').innerHTML = 'Player Two IMPECCABLE WIN!'
+          document.getElementById('winner2').innerHTML = 'IMPECCABLE WIN! Player Two'
+          $('#winner2').hide(3000)
+          $('#winner2').show(3000)
         } else {
           player = 1 // when player 2 goes, switch back to player 1
         }
       }
     }
   })
+
+  // $('#hide').click(function () {
+  // $('#hide').hide()
+  // })
+
+  // $('').click(function () {
+  // $('#hide').show()
+  // })
 
   // will fire every time a box is clicked
   function checkForWinner (symbol) { // symbol is 'x' or 'o'
@@ -71,6 +83,14 @@ $(document).ready(function () {
 })
 
 function restart () {
-  window.location.reload()
+  $('#a1').removeClass('x o')
+  $('#a2').removeClass('x o')
+  $('#a3').removeClass('x o')
+  $('#b1').removeClass('x o')
+  $('#b2').removeClass('x o')
+  $('#b3').removeClass('x o')
+  $('#c1').removeClass('x o')
+  $('#c2').removeClass('x o')
+  $('#c3').removeClass('x o')
 }
-document.getElementById('newGame').addEventListener('click', restart)
+$('#newGame').click(restart)
