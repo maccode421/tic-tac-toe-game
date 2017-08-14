@@ -84,5 +84,7 @@ function restart () {
   $('#c1').removeClass('x o')
   $('#c2').removeClass('x o')
   $('#c3').removeClass('x o')
+  $('#winner1').removeClass('winner')
+  $('#winner2').removeClass('winner')
 }
 $('#newGame').click(restart)

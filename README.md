@@ -1,7 +1,8 @@
 Tic Tac Toe Game by Macc Pholsina
 
 Link to deployed site:
-https://maccode421.github.io/tic-tac-toe-game/
+github repo url:https://github.com/maccode421/tic-tac-toe-game
+hosted project url:https://maccode421.github.io/tic-tac-toe-game/
 
 Technologies Used:
 HTML - Used to form structure of game
