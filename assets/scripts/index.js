@@ -24,13 +24,13 @@ $(document).ready(function () {
   $('.col-xs-3').on('click', function (event) { // how the game to be played
     const boxSelected = $(this)
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) { // game logic
-      document.getElementById('message').innerHTML = 'PICK ANOTHER BOX'
+      $('message').html('PICK ANOTHER BOX')
       $('#message').hide(3000)
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
-          document.getElementById('winner1').innerHTML = 'FLAWLESS VICTORY! Player One'
+          $('winner1').html('FLAWLESS VICTORY! Player One')
           // $('#winner1').hide(3000)
           // $('#winner1').show(3000)
         } else {
@@ -39,7 +39,7 @@ $(document).ready(function () {
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
-          document.getElementById('winner2').innerHTML = 'IMPECCABLE WIN! Player Two'
+          $('winner2').html('IMPECCABLE WIN! Player Two')
           // $('#winner2').hide(3000)
           // $('#winner2').show(3000)
         } else {
@@ -48,14 +48,6 @@ $(document).ready(function () {
       }
     }
   })
-
-  // $('#hide').click(function () {
-  // $('#hide').hide()
-  // })
-
-  // $('').click(function () {
-  // $('#hide').show()
-  // })
 
   // will fire every time a box is clicked
   function checkForWinner (symbol) { // symbol is 'x' or 'o'
