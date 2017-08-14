@@ -31,8 +31,8 @@ $(document).ready(function () {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           document.getElementById('winner1').innerHTML = 'FLAWLESS VICTORY! Player One'
-          $('#winner1').hide(3000)
-          $('#winner1').show(3000)
+          // $('#winner1').hide(3000)
+          // $('#winner1').show(3000)
         } else {
           player = 2 // switch to player 2
         }
@@ -40,8 +40,8 @@ $(document).ready(function () {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
           document.getElementById('winner2').innerHTML = 'IMPECCABLE WIN! Player Two'
-          $('#winner2').hide(3000)
-          $('#winner2').show(3000)
+          // $('#winner2').hide(3000)
+          // $('#winner2').show(3000)
         } else {
           player = 1 // when player 2 goes, switch back to player 1
         }

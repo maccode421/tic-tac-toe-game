@@ -8,9 +8,7 @@ const signInSuccess = (data) => {
   console.log('sign in success!')
   $('#signIn').html('Sign in successful.')
   $('#signIn').hide(2500)
-  // $('#sign-in').text(data.user.email)
-  // $('').val('')
-  // $('').hide()
+  $('#gameBoard').removeClass('hide')
 }
 
 const signOutSuccess = () => {
@@ -19,6 +17,7 @@ const signOutSuccess = () => {
   console.log('sign out success!')
   $('#signOut').html('You signed out.')
   $('#signOut').hide(2500)
+  $('#gameBoard').addClass('hide')
 }
 
 const changePasswordSuccess = (data) => {
@@ -37,10 +36,38 @@ const failure = (error) => {
   console.log('failure!')
 }
 
+const createGameSuccess = (data) => {
+  app.game = data.game
+  app.game.id = data.game.id
+  console.log(data)
+  console.log('Success')
+}
+
+const createGameFailure = (error) => {
+  console.log(error)
+  console.log('Fail')
+}
+
+const getHistorySuccess = (data) => {
+  $('oldGame').html('You have played before user' + app.user.id)
+  console.log(data.id)
+  console.log('Say what!')
+  console.log('success')
+}
+
+const getHistoryFailure = (error) => {
+  console.log(error)
+  console.log('Fail')
+}
+
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
-  changePasswordSuccess
+  changePasswordSuccess,
+  createGameSuccess,
+  createGameFailure,
+  getHistorySuccess,
+  getHistoryFailure
 }

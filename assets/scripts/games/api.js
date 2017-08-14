@@ -59,9 +59,52 @@ const changePassword = function (data) {
   })
 }
 
+const createGame = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/games/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const updateGame = (index, val, over) => {
+  return $.ajax({
+    url: app.host + '/games/' + app.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': val
+        },
+        'over': over
+      }
+    }
+  })
+}
+
+const getHistory = (data) => {
+  return $.ajax({
+    url: app.host + '/games?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createGame,
+  updateGame,
+  getHistory
 }

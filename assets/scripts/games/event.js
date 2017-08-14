@@ -31,9 +31,29 @@ const onSignOut = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.changePassword(data) //
+  api.changePassword(data)
     .done(ui.changePasswordSuccess)
     .fail(ui.fail)
+}
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+}
+
+const onUpdateGame = function (index, val, over) {
+  api.updateGame(index, val, over)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+}
+
+const onGetHistory = function (event) {
+  event.preventDefault()
+  api.getHistory()
+    .then(ui.getHistorySuccess)
+    .catch(ui.getHistoryFailure)
 }
 
 // calling id from html when form is submitted
@@ -43,7 +63,13 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
 }
-
 module.exports = {
-  addHandlers
+  addHandlers,
+  onSignUp,
+  onSignIn,
+  onSignOut,
+  onChangePassword,
+  onCreateGame,
+  onUpdateGame,
+  onGetHistory
 }
