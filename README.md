@@ -30,5 +30,5 @@ https://ga-students.slack.com/files/maccode/F6PJKD8LF/20170813_232002.jpg
 User stories:
 As a user, I want to be able to restart the game anytime.
 As a user, I want to see a winner message.
-As a user, I want to the game to be smooth and easy to play.
+As a user, I want the game to be smooth and easy to play.
 As a user, I want to see a fun message when there's a winner.
