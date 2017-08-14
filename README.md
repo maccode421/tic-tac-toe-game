@@ -25,6 +25,7 @@ Not sure about how many unsolved issues yet but know there's lots
 
 
 Wireframe:
+https://ga-students.slack.com/files/maccode/F6PJKD8LF/20170813_232002.jpg
 
 User stories:
 As a user, I want to be able to restart the game anytime.
