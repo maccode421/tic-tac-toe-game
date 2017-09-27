@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic Tac Toesy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <h1>Tic Tac Toesy</h1>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <div id="signUp"></div>
-      <form id="sign-up">
-          <input type="text" name="credentials[email]" value="" placeholder="email">
-          <input type="password" name="credentials[password]" value="" placeholder="password">
-          <input type="password" name="credentials[password_confirmation]" value="" placeholder="confirm password">
-          <input type="submit" name="submit" value="Sign up">
-      </form>
+<body class="container-fluid">
 
-      <div id="signIn"></div>
-      <form id="sign-in">
-          <input type="text" name="credentials[email]" value="" placeholder="email">
-          <input type="password" name="credentials[password]" value="" placeholder="password">
-          <input type="submit" name="submit" value="Sign in">
-      </form>
+  <h1>Tic Tac Toesy</h1>
 
-      <div id="signOut"></div>
-      <form id="sign-out">
-          <input type="submit" name="submit" value="Sign out">
-      </form>
+  <div id="signUp"></div>
+  <form id="sign-up">
+    <input type="text" name="credentials[email]" value="" placeholder="email">
+    <input type="password" name="credentials[password]" value="" placeholder="password">
+    <input type="password" name="credentials[password_confirmation]" value="" placeholder="confirm password">
+    <input type="submit" name="submit" value="Sign up">
+  </form>
 
-      <div id="changePassword"></div>
-      <form id="change-password">
-          <input type="password" name="credentials[old]" value="" placeholder="Old Password">
-          <input type="password" name="credentials[new]" value="" placeholder="New Password">
-          <input type="submit" name="submit" value="Change Password">
-      </form>
+  <div id="changePassword"></div>
+  <form id="change-password">
+    <input type="password" name="credentials[old]" value="" placeholder="Old Password">
+    <input type="password" name="credentials[new]" value="" placeholder="New Password">
+    <input type="submit" name="submit" value="Change Password">
+  </form>
 
-      <div id="message"></div>
+  <div id="signIn"></div>
+  <form id="sign-in">
+    <input type="text" name="credentials[email]" value="" placeholder="email">
+    <input type="password" name="credentials[password]" value="" placeholder="password">
+    <input type="submit" name="submit" value="Sign in">
+  </form>
 
-      <!-- player X and player O -->
-      <div id="winner1" class="winner">
-        <h2>Player One</h2>
-      </div>
-      <div id="winner2" class="winner">
-        <h2>Player Two</h2>
-      </div>
+  <div id="signOut"></div>
+  <form id="sign-out">
+    <input type="submit" name="submit" value="Sign out">
+  </form>
 
-        <!-- add a button function to reset game -->
-      <button id="newGame">
-        <h4>Play Again</h4>
-      </button>
+  <div id="message"></div>
 
-      <div id="gameBoard" class="container hide">
-          <div class="row">
-            <div id="a1" class="col-xs-3 box1">T</div>
-            <div id="a2" class="col-xs-3 box2">I</div>
-            <div id="a3" class="col-xs-3 box3">C</div>
-          </div>
-          <div class="row">
-            <div id="b1" class="col-xs-3 box4">T</div>
-            <div id="b2" class="col-xs-3 box5">A</div>
-            <div id="b3" class="col-xs-3 box6">C</div>
-          </div>
-          <div class="row">
-            <div id="c1" class="col-xs-3 box7">T</div>
-            <div id="c2" class="col-xs-3 box8">O</div>
-            <div id="c3" class="col-xs-3 box9">E</div>
-          </div>
-      </div>
+  <!-- reset game -->
+  <button id="newGame">Play Again</button>
 
-    </body>
+  <!-- get game history -->
+  <button id="oldGame">Game History</button>
+
+  <!-- player X and player O -->
+  <div id="winner1" class="winner">
+    <h2>Player One</h2>
+  </div>
+  <div id="winner2" class="winner">
+    <h2>Player Two</h2>
+  </div>
+
+  <!-- game board -->
+  <div id="gameBoard" class="container hide">
+    <div class="row">
+      <div id="a1" class="col-xs-3 box1">T</div>
+      <div id="a2" class="col-xs-3 box2">I</div>
+      <div id="a3" class="col-xs-3 box3">C</div>
+    </div>
+    <div class="row">
+      <div id="b1" class="col-xs-3 box4">T</div>
+      <div id="b2" class="col-xs-3 box5">A</div>
+      <div id="b3" class="col-xs-3 box6">C</div>
+    </div>
+    <div class="row">
+      <div id="c1" class="col-xs-3 box7">T</div>
+      <div id="c2" class="col-xs-3 box8">O</div>
+      <div id="c3" class="col-xs-3 box9">E</div>
+    </div>
+  </div>
+
+</body>
+
 </html>

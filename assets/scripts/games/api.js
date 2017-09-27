@@ -7,12 +7,10 @@ const app = require('../app')
 
 const signUp = function (data) {
   console.log(data)
-  $('#signUp').html('Sign up successful.')
-  $('#signUp').hide(2500)
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
-    data: { // Data
+    data: {
       'credentials': {
         'email': data.credentials.email,
         'password': data.credentials.password,

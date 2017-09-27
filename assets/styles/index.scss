@@ -3,17 +3,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // $background: #4286f4
 
-body {
-  background-image: url('https://s3.envato.com/files/214324850/Glow%20Neon%20White%20Lights%20Tunnel.jpg');
-  //  background-color: #000000;
-  background-size: cover;
-  font-size: 16px;
-  // text-align: center;
+container-fluid {
+  display: flex;
 }
 
-//.container {
-//  background-position: center;
-//}
+body {
+  background-image: url('https://s3.envato.com/files/214324850/Glow%20Neon%20White%20Lights%20Tunnel.jpg');
+  background-size: cover;
+  font-size: 16px;
+}
 
 .row {
   height: 150px;
@@ -23,37 +21,41 @@ body {
 .col-xs-3 {
   border: dotted;
   border-radius: 12px;
-  color: #ffffff;
+  box-shadow: 4px 4px #333;
+  color: #fff;
   cursor: pointer;
   height: 150px;
   margin-top: -149px;
+  text-shadow: 4px 4px #333;
   width: 150px;
 }
 
 h1 {
   border: dotted;
   border-radius: 12px;
+  box-shadow: 4px 4px 5px #333;
   box-sizing: content-box;
-  color: #ffffff;
-  // float: right;
+  color: #fff;
   font-family: fantasy;
   font-size: 60px;
   font-weight: bold;
+  margin-left: 69%;
+  padding: 5px;
+  position: inherit;
   text-align: center;
+  text-shadow: 4px 3px #333;
   width: 400px;
 }
 
 h2 {
-  // border: dotted;
-  // box-sizing: content-box;
-  color: #ffffff;
+  color: #fff;
   font-family: fantasy;
-  // display: inline;
-  // text-align: center;
-}
-
-h4 {
-  font-family: fantasy;
+  font-weight: bold;
+  margin: 0;
+  padding: 1%;
+  position: inherit;
+  text-shadow: 4px 4px 5px #333;
+  width: 15%;
 }
 
 #message {
@@ -66,54 +68,37 @@ h4 {
 #winner1 {
   color: #0000ff;
   font-family: fantasy;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 #winner2 {
   color: #39ff14;
   font-family: fantasy;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 }
 
-// div {
-//  background-position: center;
-// }
-
-// .player1 {
-// color: #39ff14;
-// float: right;
-// }
-
-// .player2 {
-// color: #39ff14;
-// display: inline-block;
-// float: right;
-// text-align: center;
-// }
-
-// .col {
-// border: dotted;
-// color: #ffffff;
-// height: 50px;
-// width: 300px;
-// }
-
 button {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  font-family: fantasy;
+  margin-top: 1%;
+  position: inherit;
 }
 
 form {
-  //  background-color: #000000;
-  color: #ffffff;
+  color: #fff;
   font-family: fantasy;
   text-align: right;
 }
 
 input {
-  background-color: #000000;
+  background-color: #000;
+  cursor: pointer;
+  margin-top: 1%;
+  text-align: center;
 }
 
 .x {

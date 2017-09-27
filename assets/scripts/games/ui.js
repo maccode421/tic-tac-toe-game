@@ -7,7 +7,7 @@ const signInSuccess = (data) => {
   console.log(app)
   console.log('sign in success!')
   $('#signIn').html('Sign in successful.')
-  $('#signIn').hide(2500)
+  // $('#signIn').hide()
   $('#gameBoard').removeClass('hide')
 }
 
@@ -16,14 +16,14 @@ const signOutSuccess = () => {
   console.log(app)
   console.log('sign out success!')
   $('#signOut').html('You signed out.')
-  $('#signOut').hide(2500)
+  // $('#signOut').hide()
   $('#gameBoard').addClass('hide')
 }
 
 const changePasswordSuccess = (data) => {
   console.log('Password Successfully Changed.')
   $('#changePassword').html('Password Successfully Changed')
-  $('#changePassword').hide(2500)
+  $('#changePassword').hide()
 }
 
 const success = (data) => {
