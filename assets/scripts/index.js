@@ -30,14 +30,14 @@ $(document).ready(function () {
 
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
       console.log('please pick another box')
-      $('message').html('PICK ANOTHER BOX')
+      $('#message').html('PICK ANOTHER BOX')
     } else {
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           won = true
           console.log('player x wins!')
-          $('#winner1').show('FLAWLESS VICTORY!')
+          $('#winner1').html('Player One FLAWLESS VICTORY!')
         } else {
           player = 2 // switch to player 2
         }
@@ -46,7 +46,7 @@ $(document).ready(function () {
         if (checkForWinner('o')) { // return true or false
           won = true
           console.log('player o wins!')
-          $('#winner2').html('IMPECCABLE WIN!')
+          $('#winner2').html('Player Two IMPECCABLE WIN!')
         } else {
           player = 1 // when player 2 goes, switch back to player 1
         }
@@ -54,10 +54,9 @@ $(document).ready(function () {
     }
   })
 
-  function CheckForTie () {
+  function checkForTie () {
     for (let i = 1; i < 10; i++) {
-      if (boxSelected(i) === '')
-        return false
+      return false
     }
     return true
   }
@@ -88,7 +87,6 @@ $(document).ready(function () {
 
 // reset game
 function restart () {
-  won = false
   $('#a1').removeClass('x o')
   $('#a2').removeClass('x o')
   $('#a3').removeClass('x o')
@@ -98,5 +96,6 @@ function restart () {
   $('#c1').removeClass('x o')
   $('#c2').removeClass('x o')
   $('#c3').removeClass('x o')
+  won = false
 }
 $('#newGame').click(restart)

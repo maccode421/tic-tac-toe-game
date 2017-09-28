@@ -24,6 +24,8 @@ const changePasswordSuccess = (data) => {
   console.log('Password Successfully Changed.')
   $('#changePassword').html('Password Successfully Changed')
   $('#changePassword').hide()
+  // $('').val('')
+  // $('').val('')
 }
 
 const success = (data) => {
@@ -49,9 +51,9 @@ const createGameFailure = (error) => {
 }
 
 const getHistorySuccess = (data) => {
-  $('oldGame').html('You have played before user' + app.user.id)
+  // $('gameHistory').html('You have played before user' + app.user.id)
   console.log(data.id)
-  console.log('Say what!')
+  // console.log('Say what!')
   console.log('success')
 }
 

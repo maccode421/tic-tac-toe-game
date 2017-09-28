@@ -25,7 +25,12 @@ const signIn = function (data) {
   return $.ajax({
     url: app.host + '/sign-in/',
     method: 'POST',
-    data
+    data: {
+      'credentials': {
+        'email': data.credentials.email,
+        'password': data.credentials.password
+      }
+    }
   })
 }
 
@@ -89,7 +94,7 @@ const updateGame = (index, val, over) => {
 
 const getHistory = (data) => {
   return $.ajax({
-    url: app.host + '/games?over=true',
+    url: app.host + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token

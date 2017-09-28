@@ -50,6 +50,7 @@ const onUpdateGame = function (index, val, over) {
 }
 
 const onGetHistory = function (event) {
+  console.log('success')
   event.preventDefault()
   api.getHistory()
     .then(ui.getHistorySuccess)
@@ -62,7 +63,9 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#gameHistory').on('click', onGetHistory)
 }
+
 module.exports = {
   addHandlers,
   onSignUp,
