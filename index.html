@@ -17,7 +17,7 @@
 
   <h1>Tic Tac Toesy</h1>
 
-  <div id="signUp"></div>
+  <!-- <div id="signUp"></div> -->
   <form id="sign-up">
     <input type="text" name="credentials[email]" value="" placeholder="email">
     <input type="password" name="credentials[password]" value="" placeholder="password">
@@ -25,57 +25,57 @@
     <input type="submit" name="submit" value="Sign up">
   </form>
 
-  <div id="changePassword"></div>
-  <form id="change-password">
-    <input type="password" name="credentials[old]" value="" placeholder="old password">
-    <input type="password" name="credentials[new]" value="" placeholder="new password">
-    <input type="submit" name="submit" value="Change Password">
-  </form>
-
-  <div id="signIn"></div>
+  <!-- <div id="signIn"></div> -->
   <form id="sign-in">
     <input type="text" name="credentials[email]" value="" placeholder="email">
     <input type="password" name="credentials[password]" value="" placeholder="password">
     <input type="submit" name="submit" value="Sign in">
   </form>
 
-  <div id="signOut"></div>
-  <form id="sign-out">
-    <input type="submit" name="submit" value="Sign out">
+  <!-- <div id="changePassword"></div> -->
+  <form id="change-password">
+    <input type="password" name="credentials[old]" value="" placeholder="old password">
+    <input type="password" name="credentials[new]" value="" placeholder="new password">
+    <input type="submit" name="submit" value="Change Password">
   </form>
 
-  <div id="message"></div>
+  <div class="container">
+    <div id="authMessage"></div>
 
-  <!-- reset game -->
-  <button id="newGame">Play Again</button>
+    <!-- <div id="signOut"></div> -->
+    <form id="sign-out">
+      <input type="submit" name="submit" value="Sign out">
+    </form>
 
-  <!-- get game history -->
-  <button id="gameHistory">Game History</button>
+    <!-- reset game -->
+    <button id="newGame">New Game</button>
 
-  <!-- player X and player O -->
-  <div id="winner1" class="winner">
-    <!-- <h2>Player One</h2> -->
+    <!-- get game history -->
+    <button id="gameHistory">Game History</button>
+
+    <!-- player turn and box taken -->
+    <div id="message"></div>
+
+    <!-- player X and player O -->
+    <div id="winner1" class="winners"></div>
+    <div id="winner2" class="winners"></div>
   </div>
-  <div id="winner2" class="winner">
-    <!-- <h2>Player Two</h2> -->
-  </div>
-
   <!-- game board -->
   <div id="gameBoard" class="container hide">
     <div class="row">
-      <div id="a1" class="col-xs-3 box1">T</div>
-      <div id="a2" class="col-xs-3 box2">I</div>
-      <div id="a3" class="col-xs-3 box3">C</div>
+      <div id="a1" data-index="0" class="col-xs-3 box1">T</div>
+      <div id="a2" data-index="1" class="col-xs-3 box2">I</div>
+      <div id="a3" data-index="2" class="col-xs-3 box3">C</div>
     </div>
     <div class="row">
-      <div id="b1" class="col-xs-3 box4">T</div>
-      <div id="b2" class="col-xs-3 box5">A</div>
-      <div id="b3" class="col-xs-3 box6">C</div>
+      <div id="b1" data-index="3" class="col-xs-3 box4">T</div>
+      <div id="b2" data-index="4" class="col-xs-3 box5">A</div>
+      <div id="b3" data-index="5" class="col-xs-3 box6">C</div>
     </div>
     <div class="row">
-      <div id="c1" class="col-xs-3 box7">T</div>
-      <div id="c2" class="col-xs-3 box8">O</div>
-      <div id="c3" class="col-xs-3 box9">E</div>
+      <div id="c1" data-index="6" class="col-xs-3 box7">T</div>
+      <div id="c2" data-index="7" class="col-xs-3 box8">O</div>
+      <div id="c3" data-index="8" class="col-xs-3 box9">E</div>
     </div>
   </div>
 

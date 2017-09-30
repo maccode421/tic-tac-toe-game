@@ -20,6 +20,7 @@ $(() => {
 })
 
 let won = false
+let gamesPlayed = 0
 
 $(document).ready(function () {
   let player = 1
@@ -30,54 +31,78 @@ $(document).ready(function () {
 
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
       console.log('please pick another box')
-      $('#message').html('PICK ANOTHER BOX')
+      $('#message').html('pick another box')
     } else {
+      console.log(event)
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           won = true
           console.log('player x wins!')
-          $('#winner1').html('Player One FLAWLESS VICTORY!')
+          $('#winner1').html('Player 1 FLAWLESS VICTORY!')
         } else {
           player = 2 // switch to player 2
+          $('#message').html('player 2\'s turn')
         }
+        events.onUpdateGame(event.target.dataset.index, 'x', false)
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
           won = true
           console.log('player o wins!')
-          $('#winner2').html('Player Two IMPECCABLE WIN!')
+          $('#winner2').html('Player 2 IMPECCABLE WIN!')
         } else {
           player = 1 // when player 2 goes, switch back to player 1
+          $('#message').html('player 1\'s turn')
         }
+        events.onUpdateGame(event.target.dataset.index, 'o', false)
       }
     }
   })
 
-  function checkForTie () {
-    for (let i = 1; i < 10; i++) {
-      return false
-    }
-    return true
+  // const moveCount = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+  //
+  // function checkForTie (moveCount) {
+  //   moveCount = moveCount.length === 9; moveCount++
+  //   return true
+  // } if (moveCount === 9) {
+  //   checkForTie()
+  //   console.log('bumping heads')
+  // }
+  //   return false
+  // }
+
+  // tracking games played
+  function recordGame () {
+    gamesPlayed = gamesPlayed++
+    return gamesPlayed
   }
 
   // possible winning combos
   function checkForWinner (symbol) {
     if ($('.box1').hasClass(symbol) && $('.box2').hasClass(symbol) && $('.box3').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box4').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box6').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box7').hasClass(symbol) && $('.box8').hasClass(symbol) && $('.box9').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box1').hasClass(symbol) && $('.box4').hasClass(symbol) && $('.box7').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box2').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box8').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box3').hasClass(symbol) && $('.box6').hasClass(symbol) && $('.box9').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box1').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box9').hasClass(symbol)) {
+      recordGame()
       return true
     } else if ($('.box3').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box7').hasClass(symbol)) {
+      recordGame()
       return true
     } else {
       return false
@@ -98,4 +123,9 @@ function restart () {
   $('#c3').removeClass('x o')
   won = false
 }
-$('#newGame').click(restart)
+$('#newGame').click(() => {
+  restart()
+  $('#winner1').empty()
+  $('#winner2').empty()
+  events.onCreateGame()
+})

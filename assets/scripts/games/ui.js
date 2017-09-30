@@ -4,10 +4,9 @@ const app = require('../app.js')
 
 const signInSuccess = (data) => {
   app.user = data.user
-  console.log(app)
+  console.log(data)
   console.log('sign in success!')
-  $('#signIn').html('Sign in successful.')
-  // $('#signIn').hide()
+  $('#authMessage').html('You\'re signed in')
   $('#gameBoard').removeClass('hide')
 }
 
@@ -15,22 +14,19 @@ const signOutSuccess = () => {
   app.user = null
   console.log(app)
   console.log('sign out success!')
-  $('#signOut').html('You signed out.')
-  // $('#signOut').hide()
+  $('#authMessage').html('You\'re signed out')
   $('#gameBoard').addClass('hide')
 }
 
 const changePasswordSuccess = (data) => {
   console.log('Password Successfully Changed.')
-  $('#changePassword').html('Password Successfully Changed')
-  $('#changePassword').hide()
-  // $('').val('')
-  // $('').val('')
+  $('#authMessage').html('Password successfully changed')
 }
 
 const success = (data) => {
   console.log(data)
   console.log('success!')
+  $('#authMessage').html('Sign up successful')
 }
 
 const failure = (error) => {
@@ -40,9 +36,8 @@ const failure = (error) => {
 
 const createGameSuccess = (data) => {
   app.game = data.game
-  app.game.id = data.game.id
   console.log(data)
-  console.log('Success')
+  console.log('create new game success')
 }
 
 const createGameFailure = (error) => {
@@ -50,16 +45,23 @@ const createGameFailure = (error) => {
   console.log('Fail')
 }
 
+const updateGameSuccess = (data) => {
+  console.log(data)
+  // console.log('game update success')
+}
+
+const updateGameFailure = (error) => {
+  console.log(error)
+}
+
 const getHistorySuccess = (data) => {
-  // $('gameHistory').html('You have played before user' + app.user.id)
-  console.log(data.id)
-  // console.log('Say what!')
-  console.log('success')
+  console.log(data)
+  console.log('game history success')
 }
 
 const getHistoryFailure = (error) => {
   console.log(error)
-  console.log('Fail')
+  console.log('game history failed')
 }
 
 module.exports = {
@@ -71,5 +73,7 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   getHistorySuccess,
-  getHistoryFailure
+  getHistoryFailure,
+  updateGameSuccess,
+  updateGameFailure
 }

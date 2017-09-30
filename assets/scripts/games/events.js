@@ -17,6 +17,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .done(ui.signInSuccess)
+    .then(onCreateGame)
     .fail(ui.fail)
 }
 
@@ -37,7 +38,6 @@ const onChangePassword = function (event) {
 }
 
 const onCreateGame = function (event) {
-  event.preventDefault()
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
@@ -50,8 +50,8 @@ const onUpdateGame = function (index, val, over) {
 }
 
 const onGetHistory = function (event) {
-  console.log('success')
-  event.preventDefault()
+  console.log('success1')
+  // event.preventDefault()
   api.getHistory()
     .then(ui.getHistorySuccess)
     .catch(ui.getHistoryFailure)

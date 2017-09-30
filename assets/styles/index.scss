@@ -15,7 +15,7 @@ body {
 
 .row {
   height: 150px;
-  margin-left: 350px;
+  margin-left: 348px;
 }
 
 .col-xs-3 {
@@ -26,25 +26,31 @@ body {
   cursor: pointer;
   height: 150px;
   margin-top: -149px;
-  text-shadow: 4px 4px #333;
+  text-shadow: 3px 3px #333;
   width: 150px;
+}
+
+.container {
+  bottom: -25px;
+  position: relative;
 }
 
 h1 {
   border: dotted;
   border-radius: 12px;
-  box-shadow: 4px 4px 5px #333;
-  box-sizing: content-box;
+  box-shadow: 3px 3px 4px #333;
+  // box-sizing: content-box;
   color: #fff;
   font-family: fantasy;
   font-size: 60px;
   font-weight: bold;
-  margin-left: 69%;
+  margin: 5px 30%;
+  margin-top: 1%;
   padding: 5px;
-  position: inherit;
+  // position: inherit;
   text-align: center;
-  text-shadow: 4px 3px #333;
-  width: 400px;
+  text-shadow: 3px 3px #333;
+  // width: 400px;
 }
 
 h2 {
@@ -54,15 +60,19 @@ h2 {
   margin: 0;
   padding: 1%;
   position: inherit;
-  text-shadow: 4px 4px 5px #333;
+  text-shadow: 3px 3px 4px #333;
   width: 15%;
 }
 
 #message {
-  color: #ccff00;
+  color: #fff;
   font-family: fantasy;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
+  // position: absolute;
+  right: 42%;
+  text-shadow: 2px 2px #333;
+  top: 34%;
 }
 
 #winner1 {
@@ -70,6 +80,7 @@ h2 {
   font-family: fantasy;
   font-size: 24px;
   font-weight: bold;
+  text-shadow: 2px 2px #333;
 }
 
 #winner2 {
@@ -77,6 +88,17 @@ h2 {
   font-family: fantasy;
   font-size: 24px;
   font-weight: bold;
+  text-shadow: 2px 2px #333;
+}
+
+.winners {
+  // position: absolute;
+  right: 36%;
+  top: 41%;
+}
+
+#authMessage {
+  color: #fff;
 }
 
 button {
@@ -84,13 +106,16 @@ button {
   color: #fff;
   display: flex;
   font-family: fantasy;
-  margin-top: 1%;
+  margin: 5px;
+  margin-top: 2%;
   position: inherit;
 }
 
 form {
   color: #fff;
+  display: table-cell;
   font-family: fantasy;
+  margin: 4px;
   text-align: right;
 }
 
@@ -115,6 +140,6 @@ input {
   opacity: .7;
 }
 
-.hide {
-  display: none;
-}
+// .hide {
+//   display: none;
+// }
