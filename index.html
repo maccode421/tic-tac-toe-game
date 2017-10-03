@@ -17,51 +17,52 @@
 
   <h1>Tic Tac Toesy</h1>
 
-  <!-- <div id="signUp"></div> -->
-  <form id="sign-up">
-    <input type="text" name="credentials[email]" value="" placeholder="email">
-    <input type="password" name="credentials[password]" value="" placeholder="password">
-    <input type="password" name="credentials[password_confirmation]" value="" placeholder="confirm password">
-    <input type="submit" name="submit" value="Sign up">
-  </form>
+  <div id="authForms">
+    <form id="sign-up">
+      <input class="input" type="text" name="credentials[email]" value="" placeholder="email">
+      <input class="input" type="password" name="credentials[password]" value="" placeholder="password">
+      <input class="input" type="password" name="credentials[password_confirmation]" value="" placeholder="confirm password">
+      <input type="submit" name="submit" value="Sign up">
+    </form>
 
-  <!-- <div id="signIn"></div> -->
-  <form id="sign-in">
-    <input type="text" name="credentials[email]" value="" placeholder="email">
-    <input type="password" name="credentials[password]" value="" placeholder="password">
-    <input type="submit" name="submit" value="Sign in">
-  </form>
+    <form id="change-password">
+      <input class="input" type="password" name="credentials[old]" value="" placeholder="old password">
+      <input class="input" type="password" name="credentials[new]" value="" placeholder="new password">
+      <input type="submit" name="submit" value="Change Password">
+    </form>
 
-  <!-- <div id="changePassword"></div> -->
-  <form id="change-password">
-    <input type="password" name="credentials[old]" value="" placeholder="old password">
-    <input type="password" name="credentials[new]" value="" placeholder="new password">
-    <input type="submit" name="submit" value="Change Password">
-  </form>
+    <form id="sign-in">
+      <input class="input" type="text" name="credentials[email]" value="" placeholder="email">
+      <input class="input" type="password" name="credentials[password]" value="" placeholder="password">
+      <input type="submit" name="submit" value="Sign in">
+    </form>
 
-  <div class="container">
-    <div id="authMessage"></div>
-
-    <!-- <div id="signOut"></div> -->
     <form id="sign-out">
       <input type="submit" name="submit" value="Sign out">
     </form>
+    <!-- signup/signin/changePW/signnout message-->
+    <div id="authMessage"></div>
+  </div>
+
+  <!-- <div class="container">
+  </div> -->
+
+  <div id="gameBoard" class="container hide">
+
+    <div>
+      <!-- player turn and box taken -->
+      <div id="message"></div>
+      <!-- player X and player O -->
+      <div id="winner1" class="winners"></div>
+      <div id="winner2" class="winners"></div>
+    </div>
 
     <!-- reset game -->
     <button id="newGame">New Game</button>
-
     <!-- get game history -->
     <button id="gameHistory">Game History</button>
 
-    <!-- player turn and box taken -->
-    <div id="message"></div>
-
-    <!-- player X and player O -->
-    <div id="winner1" class="winners"></div>
-    <div id="winner2" class="winners"></div>
-  </div>
-  <!-- game board -->
-  <div id="gameBoard" class="container hide">
+    <!-- game board -->
     <div class="row">
       <div id="a1" data-index="0" class="col-xs-3 box1">T</div>
       <div id="a2" data-index="1" class="col-xs-3 box2">I</div>

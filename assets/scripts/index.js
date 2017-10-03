@@ -21,6 +21,7 @@ $(() => {
 
 let won = false
 let gamesPlayed = 0
+let moveCount = 0
 
 $(document).ready(function () {
   let player = 1
@@ -33,16 +34,22 @@ $(document).ready(function () {
       console.log('please pick another box')
       $('#message').html('pick another box')
     } else {
+      moveCount++ // moveCount = moveCount + 1
       console.log(event)
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           won = true
           console.log('player x wins!')
-          $('#winner1').html('Player 1 FLAWLESS VICTORY!')
+          $('#winner1').html('FLAWLESS VICTORY!')
+        }
+        console.log(moveCount, won)
+        if (moveCount === 9 && won === false) {
+          // do when there is a tie
+          console.log('bumping heads')
         } else {
           player = 2 // switch to player 2
-          $('#message').html('player 2\'s turn')
+          $('#message').html('Player 2\'s turn')
         }
         events.onUpdateGame(event.target.dataset.index, 'x', false)
       } else {
@@ -50,27 +57,20 @@ $(document).ready(function () {
         if (checkForWinner('o')) { // return true or false
           won = true
           console.log('player o wins!')
-          $('#winner2').html('Player 2 IMPECCABLE WIN!')
+          $('#winner2').html('IMPECCABLE WIN!')
+        }
+        console.log(moveCount, won)
+        if (moveCount === 9 && won === false) {
+          // do when there is a tie
+          console.log('bumping heads')
         } else {
           player = 1 // when player 2 goes, switch back to player 1
-          $('#message').html('player 1\'s turn')
+          $('#message').html('Player 1\'s turn')
         }
         events.onUpdateGame(event.target.dataset.index, 'o', false)
       }
     }
   })
-
-  // const moveCount = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
-  //
-  // function checkForTie (moveCount) {
-  //   moveCount = moveCount.length === 9; moveCount++
-  //   return true
-  // } if (moveCount === 9) {
-  //   checkForTie()
-  //   console.log('bumping heads')
-  // }
-  //   return false
-  // }
 
   // tracking games played
   function recordGame () {
@@ -122,6 +122,7 @@ function restart () {
   $('#c2').removeClass('x o')
   $('#c3').removeClass('x o')
   won = false
+  moveCount = 0
 }
 $('#newGame').click(() => {
   restart()
