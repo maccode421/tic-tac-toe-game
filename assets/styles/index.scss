@@ -15,7 +15,6 @@ body {
 
 .row {
   height: 150px;
-  // margin-left: 348px;
   padding-left: 32%;
   padding-top: 5%;
 }
@@ -32,16 +31,10 @@ body {
   width: 150px;
 }
 
-// .container {
-//   position: relative;
-//   top: 80px;
-// }
-
 h1 {
   border: dotted;
   border-radius: 12px;
   box-shadow: 3px 3px 4px #333;
-  // box-sizing: content-box;
   color: #fff;
   font-family: fantasy;
   font-size: 60px;
@@ -49,10 +42,8 @@ h1 {
   margin: 5px 30%;
   margin-top: 1%;
   padding: 5px;
-  // position: inherit;
   text-align: center;
   text-shadow: 3px 3px #333;
-  // width: 400px;
 }
 
 h2 {
@@ -71,13 +62,10 @@ h2 {
   font-family: fantasy;
   font-size: 20px;
   font-weight: bold;
-  // position: absolute;
-  right: 42%;
   text-shadow: 2px 2px #333;
-  top: 34%;
 }
 
-#winner1 {
+#winnerX {
   color: #0000ff;
   font-family: fantasy;
   font-size: 24px;
@@ -85,7 +73,7 @@ h2 {
   text-shadow: 2px 2px #333;
 }
 
-#winner2 {
+#winnerO {
   color: #39ff14;
   font-family: fantasy;
   font-size: 24px;
@@ -94,8 +82,6 @@ h2 {
 }
 
 .winners {
-  // display: inline-block;
-  // position: absolute;
   right: 36%;
   top: 41%;
 }
@@ -110,6 +96,10 @@ h2 {
 
 #authMessage {
   text-align: right;
+}
+
+#newGame {
+  font-size: 20px;
 }
 
 button {
@@ -151,6 +141,31 @@ input {
   opacity: .7;
 }
 
-// .hide {
-//   display: none;
-// }
+.input-prepend span.pre_text {
+  width: 55px;
+}
+
+.input-prepend .span1 {
+  width: 93px;
+}
+
+.input-prepend {
+  margin-bottom: 10px;
+}
+
+.input-append .win_times {
+  background: #fff;
+  width: 101px;
+}
+
+.input-append .win_text {
+  color: #fff;
+  font-family: fantasy;
+  font-size: 20px;
+  margin-left: 7px;
+  width: 52px;
+}
+
+.hide {
+  display: none;
+}

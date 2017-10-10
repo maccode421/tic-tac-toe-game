@@ -44,23 +44,26 @@
     <div id="authMessage"></div>
   </div>
 
-  <!-- <div class="container">
-  </div> -->
-
   <div id="gameBoard" class="container hide">
-
-    <div>
-      <!-- player turn and box taken -->
-      <div id="message"></div>
-      <!-- player X and player O -->
-      <div id="winner1" class="winners"></div>
-      <div id="winner2" class="winners"></div>
-    </div>
-
     <!-- reset game -->
     <button id="newGame">New Game</button>
+
     <!-- get game history -->
-    <button id="gameHistory">Game History</button>
+    <!-- <button id="gameHistory">Game History</button> -->
+
+    <!-- win count -->
+    <div class="input-prepend input-append">
+      <span class="add-on win_text">X won - </span>
+      <strong id="x_win" class="win_times add-on">0</strong>
+    </div>
+    <div class="input-prepend input-append">
+      <span class="add-on win_text">O won - </span>
+      <strong id="o_win" class="win_times add-on">0</strong>
+    </div>
+    <div class="input-prepend input-append">
+      <span class="add-on win_text">Tie - </span>
+      <strong id="tie" class="win_times add-on">0</strong>
+    </div>
 
     <!-- game board -->
     <div class="row">
@@ -78,6 +81,14 @@
       <div id="c2" data-index="7" class="col-xs-3 box8">O</div>
       <div id="c3" data-index="8" class="col-xs-3 box9">E</div>
     </div>
+  </div>
+
+  <div class="content-box">
+    <!-- player X and player O -->
+    <div id="winnerX" class="winners"></div>
+    <div id="winnerO" class="winners"></div>
+    <!-- player turn and box taken -->
+    <div id="message"></div>
   </div>
 
 </body>

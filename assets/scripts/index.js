@@ -22,16 +22,18 @@ $(() => {
 let won = false
 let gamesPlayed = 0
 let moveCount = 0
+let winCount = 0
 
 $(document).ready(function () {
   let player = 1
   // click event
   $('.col-xs-3').on('click', function (event) {
     const boxSelected = $(this)
-    if (won === true) { return }
-
+    if (won === true) {
+      return
+    }
+    // box already taken
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
-      console.log('please pick another box')
       $('#message').html('pick another box')
     } else {
       moveCount++ // moveCount = moveCount + 1
@@ -40,32 +42,35 @@ $(document).ready(function () {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           won = true
-          console.log('player x wins!')
-          $('#winner1').html('FLAWLESS VICTORY!')
+          winCount++ // keeping track of wins
+          $('#winnerX').html('FLAWLESS VICTORY!')
+          $('#x_win').html(winCount)
         }
-        console.log(moveCount, won)
+        // checking for tie
         if (moveCount === 9 && won === false) {
           // do when there is a tie
-          console.log('bumping heads')
+          $('#message').html('bumping heads!')
+          $('#tie').html(moveCount)
         } else {
           player = 2 // switch to player 2
-          $('#message').html('Player 2\'s turn')
+          $('#message').html('O\'s turn')
         }
         events.onUpdateGame(event.target.dataset.index, 'x', false)
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
           won = true
-          console.log('player o wins!')
-          $('#winner2').html('IMPECCABLE WIN!')
+          winCount++
+          $('#winnerO').html('IMPECCABLE WIN!')
+          $('#o_win').html(winCount)
         }
-        console.log(moveCount, won)
         if (moveCount === 9 && won === false) {
           // do when there is a tie
-          console.log('bumping heads')
+          $('#message').html('bumping heads!')
+          $('#tie').html(moveCount)
         } else {
           player = 1 // when player 2 goes, switch back to player 1
-          $('#message').html('Player 1\'s turn')
+          $('#message').html('X\'s turn')
         }
         events.onUpdateGame(event.target.dataset.index, 'o', false)
       }
@@ -123,10 +128,12 @@ function restart () {
   $('#c3').removeClass('x o')
   won = false
   moveCount = 0
+  winCount = 0
 }
+
 $('#newGame').click(() => {
   restart()
-  $('#winner1').empty()
-  $('#winner2').empty()
+  $('#winnerX').empty()
+  $('#winnerO').empty()
   events.onCreateGame()
 })
