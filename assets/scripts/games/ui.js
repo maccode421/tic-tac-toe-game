@@ -35,9 +35,9 @@ const signOutSuccess = () => {
   console.log(app)
   console.log('sign out success!')
   $('#authMessage').html('Good Bye!')
-  $('#authMessage').fadeOut(1200)
+  $('#authMessage').fadeOut(1500)
   $('#gameBoard').addClass('hide')
-  // restart()
+  restart()
 }
 
 const signOutFailure = (error) => {
@@ -78,8 +78,9 @@ const updateGameFailure = (error) => {
 
 const getHistorySuccess = (data) => {
   console.log(data)
+  const games = data.games.length
+  $('#message').html(games)
   console.log('game history success')
-  $('#message').html(data)
 }
 
 const getHistoryFailure = (error) => {
@@ -87,22 +88,22 @@ const getHistoryFailure = (error) => {
   console.log('game history failed')
 }
 
-// function restart () {
-//   $('#a1').removeClass('x o')
-//   $('#a2').removeClass('x o')
-//   $('#a3').removeClass('x o')
-//   $('#b1').removeClass('x o')
-//   $('#b2').removeClass('x o')
-//   $('#b3').removeClass('x o')
-//   $('#c1').removeClass('x o')
-//   $('#c2').removeClass('x o')
-//   $('#c3').removeClass('x o')
-//   $('#x_win').empty()
-//   $('#o_win').empty()
-//   $('#tie').empty()
-//   $('#winnerX').empty()
-//   $('#winnerO').empty()
-// }
+function restart () {
+  $('#a1').removeClass('x o')
+  $('#a2').removeClass('x o')
+  $('#a3').removeClass('x o')
+  $('#b1').removeClass('x o')
+  $('#b2').removeClass('x o')
+  $('#b3').removeClass('x o')
+  $('#c1').removeClass('x o')
+  $('#c2').removeClass('x o')
+  $('#c3').removeClass('x o')
+  $('#x_win').html('')
+  $('#o_win').html('')
+  $('#tie').html('')
+  // $('#winnerX').empty()
+  // $('#winnerO').empty()
+}
 
 module.exports = {
   signUpSuccess,

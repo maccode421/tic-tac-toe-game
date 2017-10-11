@@ -20,12 +20,12 @@ $(() => {
 })
 
 let won = false
+let gameOver = false
 let gamesPlayed = 0
 let moveCount = 0
+let tieCount = 0
 let xWin = 0
 let oWin = 0
-let gameOver = false
-// let tieCount = 0
 
 $(document).ready(function () {
   let player = 1
@@ -39,33 +39,40 @@ $(document).ready(function () {
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
       $('#message').html('Pick another box!')
     } else {
-      moveCount++ // moveCount = moveCount + 1
+      // moveCount = moveCount + 1
+      moveCount++
       if (player === 1) {
-        boxSelected.addClass('x') // if box is selected, add 'x'
-        if (checkForWinner('x')) { // return true or false
+        // if box is selected, add 'x'
+        boxSelected.addClass('x')
+        // return true or false
+        if (checkForWinner('x')) {
           won = true
           gameOver = true
-          xWin++ // keeping track of wins
+          // keep track of wins
+          xWin++
           recordGame('x')
           console.log(xWin)
           $('#winnerX').html('X-FLAWLESS VICTORY!')
           $('#x_win').html(xWin)
         }
-        // checking for tie
+        // check for tie
         if (moveCount === 9 && won === false) {
           gameOver = true
-          // tieCount++
+          tieCount++
           // do when there is a tie
           $('#message').html('Bumping heads!')
-          // $('#tie').html(tieCount)
+          $('#tie').html(tieCount)
         } else {
-          player = 2 // switch to player 2
+          // switch to player 2
+          player = 2
           $('#message').html('O\'s turn')
         }
         events.onUpdateGame(event.target.dataset.index, 'x', gameOver)
       } else {
-        boxSelected.addClass('o') // if box is selected, add 'o'
-        if (checkForWinner('o')) { // return true or false
+        // if box is selected, add 'o'
+        boxSelected.addClass('o')
+        // return true or false
+        if (checkForWinner('o')) {
           won = true
           gameOver = true
           oWin++
@@ -74,14 +81,16 @@ $(document).ready(function () {
           $('#winnerO').html('O-IMPECCABLE WIN!')
           $('#o_win').html(oWin)
         }
+        // check for tie
         if (moveCount === 9 && won === false) {
           gameOver = true
-          // tieCount++
+          tieCount++
           // do when there is a tie
           $('#message').html('Bumping heads!')
-          // $('#tie').html(tieCount)
+          $('#tie').html(tieCount)
         } else {
-          player = 1 // when player 2 goes, switch back to player 1
+          // when player 2 goes, switch back to player 1
+          player = 1
           $('#message').html('X\'s turn')
         }
         events.onUpdateGame(event.target.dataset.index, 'o', gameOver)
@@ -131,6 +140,7 @@ function restart () {
   $('#c2').removeClass('x o')
   $('#c3').removeClass('x o')
   won = false
+  gameOver = false
   moveCount = 0
   // xWin = 0
   // oWin = 0
@@ -144,6 +154,6 @@ $('#newGame').click(() => {
   events.onCreateGame()
 })
 
-// module.exports = {
-//   restart
-// }
+module.exports = {
+  restart
+}
