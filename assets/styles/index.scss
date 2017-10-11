@@ -15,8 +15,8 @@ body {
 
 .row {
   height: 150px;
-  padding-left: 32%;
-  padding-top: 5%;
+  padding-left: 38%;
+  // padding-top: 5%;
 }
 
 .col-xs-3 {
@@ -60,7 +60,7 @@ h2 {
 #message {
   color: #fff;
   font-family: fantasy;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   text-shadow: 2px 2px #333;
 }
@@ -91,7 +91,10 @@ h2 {
 }
 
 #sign-out {
+  display: flex;
+  flex-flow: row-reverse;
   font-size: 22px;
+  // padding: 2%;
 }
 
 #authMessage {

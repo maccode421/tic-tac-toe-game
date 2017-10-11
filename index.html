@@ -37,12 +37,13 @@
       <input type="submit" name="submit" value="Sign in">
     </form>
 
-    <form id="sign-out">
-      <input type="submit" name="submit" value="Sign out">
-    </form>
     <!-- signup/signin/changePW/signnout message-->
     <div id="authMessage"></div>
   </div>
+
+  <form id="sign-out">
+    <input type="submit" name="submit" value="Sign out">
+  </form>
 
   <div id="gameBoard" class="container hide">
     <!-- reset game -->
@@ -60,9 +61,17 @@
       <span class="add-on win_text">O won - </span>
       <strong id="o_win" class="win_times add-on">0</strong>
     </div>
-    <div class="input-prepend input-append">
+    <!-- <div class="input-prepend input-append">
       <span class="add-on win_text">Tie - </span>
       <strong id="tie" class="win_times add-on">0</strong>
+    </div> -->
+
+    <div class="content-box">
+      <!-- player X and player O -->
+      <div id="winnerX" class="winners"></div>
+      <div id="winnerO" class="winners"></div>
+      <!-- game action message -->
+      <div id="message"></div>
     </div>
 
     <!-- game board -->
@@ -81,14 +90,6 @@
       <div id="c2" data-index="7" class="col-xs-3 box8">O</div>
       <div id="c3" data-index="8" class="col-xs-3 box9">E</div>
     </div>
-  </div>
-
-  <div class="content-box">
-    <!-- player X and player O -->
-    <div id="winnerX" class="winners"></div>
-    <div id="winnerO" class="winners"></div>
-    <!-- player turn and box taken -->
-    <div id="message"></div>
   </div>
 
 </body>

@@ -22,7 +22,9 @@ $(() => {
 let won = false
 let gamesPlayed = 0
 let moveCount = 0
-let winCount = 0
+let xWin = 0
+let oWin = 0
+// let tieCount = 0
 
 $(document).ready(function () {
   let player = 1
@@ -34,45 +36,48 @@ $(document).ready(function () {
     }
     // box already taken
     if (boxSelected.hasClass('x') || boxSelected.hasClass('o')) {
-      $('#message').html('pick another box')
+      $('#message').html('Pick another box!')
     } else {
       moveCount++ // moveCount = moveCount + 1
-      console.log(event)
       if (player === 1) {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           won = true
-          winCount++ // keeping track of wins
-          $('#winnerX').html('FLAWLESS VICTORY!')
-          $('#x_win').html(winCount)
+          xWin++ // keeping track of wins
+          console.log(xWin)
+          $('#winnerX').html('X-FLAWLESS VICTORY!')
+          $('#x_win').html(xWin)
         }
         // checking for tie
         if (moveCount === 9 && won === false) {
+          // tieCount++
           // do when there is a tie
-          $('#message').html('bumping heads!')
-          $('#tie').html(moveCount)
+          $('#message').html('Bumping heads!')
+          // $('#tie').html(tieCount)
         } else {
           player = 2 // switch to player 2
           $('#message').html('O\'s turn')
         }
-        events.onUpdateGame(event.target.dataset.index, 'x', false)
+        events.onUpdateGame(event.target.dataset.index, 'x', true)
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
           won = true
-          winCount++
-          $('#winnerO').html('IMPECCABLE WIN!')
-          $('#o_win').html(winCount)
+          oWin++
+          console.log(oWin)
+          $('#winnerO').html('O-IMPECCABLE WIN!')
+          $('#o_win').html(oWin)
         }
         if (moveCount === 9 && won === false) {
+          // tieCount++
           // do when there is a tie
-          $('#message').html('bumping heads!')
-          $('#tie').html(moveCount)
+          $('#message').html('Bumping heads!')
+          // $('#tie').html(tieCount)
         } else {
           player = 1 // when player 2 goes, switch back to player 1
           $('#message').html('X\'s turn')
         }
-        events.onUpdateGame(event.target.dataset.index, 'o', false)
+        events.onUpdateGame(event.target.dataset.index, 'o', true)
       }
     }
   })
@@ -128,7 +133,9 @@ function restart () {
   $('#c3').removeClass('x o')
   won = false
   moveCount = 0
-  winCount = 0
+  // xWin = 0
+  // oWin = 0
+  // tieCount = 0
 }
 
 $('#newGame').click(() => {
@@ -137,3 +144,7 @@ $('#newGame').click(() => {
   $('#winnerO').empty()
   events.onCreateGame()
 })
+
+// module.exports = {
+//   restart
+// }
