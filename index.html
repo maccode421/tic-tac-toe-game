@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toesy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <h1>Tic Tac Toesy</h1>
+
+  <div id="authForms">
+    <form id="sign-up">
+      <input class="input" type="text" name="credentials[email]" value="" placeholder="email">
+      <input class="input" type="password" name="credentials[password]" value="" placeholder="password">
+      <input class="input" type="password" name="credentials[password_confirmation]" value="" placeholder="confirm password">
+      <input type="submit" name="submit" value="Sign up">
+    </form>
+
+    <form id="change-password">
+      <input class="input" type="password" name="credentials[old]" value="" placeholder="old password">
+      <input class="input" type="password" name="credentials[new]" value="" placeholder="new password">
+      <input type="submit" name="submit" value="Change Password">
+    </form>
+
+    <form id="sign-in">
+      <input class="input" type="text" name="credentials[email]" value="" placeholder="email">
+      <input class="input" type="password" name="credentials[password]" value="" placeholder="password">
+      <input type="submit" name="submit" value="Sign in">
+    </form>
+
+    <!-- signup/signin/changePW/signnout message-->
+    <div id="authMessage"></div>
+  </div>
+
+  <form id="sign-out">
+    <input type="submit" name="submit" value="Sign out">
+  </form>
+
+  <div id="gameBoard" class="container hide">
+    <!-- reset game -->
+    <button id="newGame">New Game</button>
+
+    <!-- win count -->
+    <div class="input-prepend input-append">
+      <span class="add-on win_text">X won - </span>
+      <strong id="x_win" class="win_times add-on">0</strong>
+    </div>
+    <div class="input-prepend input-append">
+      <span class="add-on win_text">O won - </span>
+      <strong id="o_win" class="win_times add-on">0</strong>
+    </div>
+    <div class="input-prepend input-append">
+      <span class="add-on win_text">Tie - </span>
+      <strong id="tie" class="win_times add-on">0</strong>
+    </div>
+
+    <div class="content-box">
+      <!-- get game history -->
+      <button id="gameHistory">Game History</button>
+
+      <!-- player X and player O -->
+      <div id="winnerX" class="winners"></div>
+      <div id="winnerO" class="winners"></div>
+      <!-- game action message -->
+      <div id="message"></div>
+    </div>
+
+    <!-- game board -->
+    <div class="row">
+      <div id="a1" data-index="0" class="col-xs-3 box1">T</div>
+      <div id="a2" data-index="1" class="col-xs-3 box2">I</div>
+      <div id="a3" data-index="2" class="col-xs-3 box3">C</div>
+    </div>
+    <div class="row">
+      <div id="b1" data-index="3" class="col-xs-3 box4">T</div>
+      <div id="b2" data-index="4" class="col-xs-3 box5">A</div>
+      <div id="b3" data-index="5" class="col-xs-3 box6">C</div>
+    </div>
+    <div class="row">
+      <div id="c1" data-index="6" class="col-xs-3 box7">T</div>
+      <div id="c2" data-index="7" class="col-xs-3 box8">O</div>
+      <div id="c3" data-index="8" class="col-xs-3 box9">E</div>
+    </div>
+  </div>
+
+</body>
+
+</html>
