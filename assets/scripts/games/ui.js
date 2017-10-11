@@ -79,7 +79,7 @@ const updateGameFailure = (error) => {
 const getHistorySuccess = (data) => {
   console.log(data)
   const games = data.games.length
-  $('#message').html(games)
+  $('#message').html(games + ' games played')
   console.log('game history success')
 }
 
@@ -101,8 +101,9 @@ function restart () {
   $('#x_win').html('')
   $('#o_win').html('')
   $('#tie').html('')
-  // $('#winnerX').empty()
-  // $('#winnerO').empty()
+  $('#message').html('')
+  $('#winnerX').html('')
+  $('#winnerO').html('')
 }
 
 module.exports = {
