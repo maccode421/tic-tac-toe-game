@@ -24,6 +24,7 @@ let gamesPlayed = 0
 let moveCount = 0
 let xWin = 0
 let oWin = 0
+let gameOver = false
 // let tieCount = 0
 
 $(document).ready(function () {
@@ -43,13 +44,16 @@ $(document).ready(function () {
         boxSelected.addClass('x') // if box is selected, add 'x'
         if (checkForWinner('x')) { // return true or false
           won = true
+          gameOver = true
           xWin++ // keeping track of wins
+          recordGame('x')
           console.log(xWin)
           $('#winnerX').html('X-FLAWLESS VICTORY!')
           $('#x_win').html(xWin)
         }
         // checking for tie
         if (moveCount === 9 && won === false) {
+          gameOver = true
           // tieCount++
           // do when there is a tie
           $('#message').html('Bumping heads!')
@@ -58,17 +62,20 @@ $(document).ready(function () {
           player = 2 // switch to player 2
           $('#message').html('O\'s turn')
         }
-        events.onUpdateGame(event.target.dataset.index, 'x', true)
+        events.onUpdateGame(event.target.dataset.index, 'x', gameOver)
       } else {
         boxSelected.addClass('o') // if box is selected, add 'o'
         if (checkForWinner('o')) { // return true or false
           won = true
+          gameOver = true
           oWin++
+          recordGame('o')
           console.log(oWin)
           $('#winnerO').html('O-IMPECCABLE WIN!')
           $('#o_win').html(oWin)
         }
         if (moveCount === 9 && won === false) {
+          gameOver = true
           // tieCount++
           // do when there is a tie
           $('#message').html('Bumping heads!')
@@ -77,13 +84,13 @@ $(document).ready(function () {
           player = 1 // when player 2 goes, switch back to player 1
           $('#message').html('X\'s turn')
         }
-        events.onUpdateGame(event.target.dataset.index, 'o', true)
+        events.onUpdateGame(event.target.dataset.index, 'o', gameOver)
       }
     }
   })
 
   // tracking games played
-  function recordGame () {
+  function recordGame (symbol) {
     gamesPlayed = gamesPlayed++
     return gamesPlayed
   }
@@ -91,28 +98,20 @@ $(document).ready(function () {
   // possible winning combos
   function checkForWinner (symbol) {
     if ($('.box1').hasClass(symbol) && $('.box2').hasClass(symbol) && $('.box3').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box4').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box6').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box7').hasClass(symbol) && $('.box8').hasClass(symbol) && $('.box9').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box1').hasClass(symbol) && $('.box4').hasClass(symbol) && $('.box7').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box2').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box8').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box3').hasClass(symbol) && $('.box6').hasClass(symbol) && $('.box9').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box1').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box9').hasClass(symbol)) {
-      recordGame()
       return true
     } else if ($('.box3').hasClass(symbol) && $('.box5').hasClass(symbol) && $('.box7').hasClass(symbol)) {
-      recordGame()
       return true
     } else {
       return false
