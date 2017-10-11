@@ -1,9 +1,10 @@
 # Tic Tac Toe Game by Macc Pholsina
 
 # Link to deployed site:
-Github repo URL: <a href="https://github.com/maccode421/tic-tac-toe-game"></a>
-Gosted project URL: <a href="https://maccode421.github.io/tic-tac-toe-game/"></a>
-Heroku URL: <a href="https://aqueous-atoll-85096.herokuapp.com/"></a>
+Github repo URL: https://github.com/maccode421/tic-tac-toe-game
+Gosted project URL: https://maccode421.github.io/tic-tac-toe-game/
+Heroku URL:
+https://aqueous-atoll-85096.herokuapp.com/
 
 # Technologies Used:
 HTML - Used to form structure of game
@@ -21,7 +22,7 @@ Made a list of game functionalities for project requirements. Set up game logic 
 CSS issues with layout.
 
 # Wireframe:
-<a href="https://ga-students.slack.com/files/maccode/F6PJKD8LF/20170813_232002.jpg"></a>
+https://ga-students.slack.com/files/maccode/F6PJKD8LF/20170813_232002.jpg"
 
 # User stories:
 *As a user, I want to be able to restart the game anytime.
